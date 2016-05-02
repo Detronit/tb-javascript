@@ -2,7 +2,7 @@ function qry(sr)
 {
   var qa = [];
   var sp = sr.split('&');
-  for(var prs in sp) 
+  for(var prs of sp) 
   {
     var pra = prs.split('=');
     qa[pra[0]] = pra[1];
@@ -60,13 +60,12 @@ qua = {
 	var f = [];
 //if (location.host == 'www.youtube.com') {
   name = JSON.stringify(ytplayer.config);
-  alert('run bookmarklet again on next page');
  // location = '//s.ytimg.com';
 //} else {
   var alf = JSON.parse(name);
   z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
     .join(',').split(',');
-  for(var frt in z) {
+  for(var frt of z) {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
     hrf = unescape(qst.url);
@@ -91,6 +90,7 @@ qua = {
       .replace(/h.264/, 'h264')
       .replace(/[ +./[\]]/g, '-')
       .replace(/-+/g, '-');
+    console.log("dla "+qty+" > "+href);
     pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
     qua['_' + qst.itag] =
       sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
@@ -107,6 +107,7 @@ qua = {
   }
 //
   dw = document.getElementByTag('body');
+  alert('run bookmarklet again on next page');
 
 
 //
