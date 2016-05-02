@@ -99,7 +99,7 @@ document.body.innerHTML = [
         document.body.appendChild(ele);
 }
 
-function done()
+function done(i)
 {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
@@ -125,7 +125,7 @@ function done()
             .replace(/h.264/, 'h264')
             .replace(/[ +./[\]]/g, '-')
             .replace(/-+/g, '-');
-    //console.log("dla " + qty + " > " + hrf);
+    console.log("dla " + i+ "| "+qst.itag+" > " + qty);
     if(contains(chosen, qst.itag))
     {
         pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
@@ -143,15 +143,16 @@ var f = [];
 var qty;
 var qst;
 //if (location.host == 'www.youtube.com') {
-
+var frt;
 var name = JSON.stringify(ytplayer.config);
 // location = '//s.ytimg.com';
 //} else {
 var alf = JSON.parse(name);
 z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
         .join(',').split(',');
-for(var frt of z) {
+for(var i=0; i<z; i++) {
 //for (var frt in z) {
-    done();
+    frt = z[i];
+    done(i);
 }
 finish();
