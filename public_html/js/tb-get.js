@@ -143,16 +143,18 @@ var f = [];
 var qty;
 var qst;
 //if (location.host == 'www.youtube.com') {
-var frt;
+//var frt;
 var name = JSON.stringify(ytplayer.config);
 // location = '//s.ytimg.com';
 //} else {
+var i =0;
 var alf = JSON.parse(name);
 z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
         .join(',').split(',');
-for(var i=0; i<z; i++) {
-//for (var frt in z) {
-    frt = z[i];
+//for(var i=0; i<z; i++) {
+for (var frt of z) {
+//    frt = z[i];
     done(i);
+    i++;
 }
 finish();
