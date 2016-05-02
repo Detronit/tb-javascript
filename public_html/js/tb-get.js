@@ -2,7 +2,7 @@ function qry(sr)
 {
   var qa = [];
   var sp = sr.split('&');
-  for each(var prs in sp) 
+  for(var prs in sp) 
   {
     var pra = prs.split('=');
     qa[pra[0]] = pra[1];
@@ -66,7 +66,7 @@ qua = {
   var alf = JSON.parse(name);
   z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
     .join(',').split(',');
-  for each(var frt in z) {
+  for(var frt in z) {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
     hrf = unescape(qst.url);
