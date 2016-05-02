@@ -18,6 +18,16 @@ function sprintf(nw)
     return nw;
 }
 
+function contains(a, obj) {
+    var i = a.length;
+    while (i--) {
+       if (a[i] === obj) {
+           return true;
+       }
+    }
+    return false;
+}
+
 qua = {
     _141: '256k AAC',
     _140: '128k AAC',
@@ -56,6 +66,8 @@ qua = {
     _242: '240p VP9',
     _278: '144p VP9'
 };
+var chosen = { 0:133, 1:134, 2:135, 3:136, 4:298, 5:137, 6:299, 7:264, 8:266, 9:22, 10:84};
+var arrr;
 function finish()
 {
     f['title'] = alf.args.title;
@@ -80,7 +92,7 @@ alert('run bookmarklet again on next page');
 document.body.innerHTML = [
     new Date().toLocaleTimeString(),
     'Click to copy the filename, then right click to download'
-].concat( Object.keys(qua).map(ky => qua[ky]).filter(vu => /href/.test(vu))).join('<br>');
+].concat( Object.keys(arr).map(ky => arr[ky]).filter(vu => /href/.test(vu))).join('<br>');
     var ele = document.createElement("p");
         ele.innerHTML = JSON.stringify(f);
         document.body.appendChild(ele);
@@ -112,12 +124,16 @@ function done()
             .replace(/h.264/, 'h264')
             .replace(/[ +./[\]]/g, '-')
             .replace(/-+/g, '-');
-    console.log("dla " + qty + " > " + hrf);
-    pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
-    qua['_' + qst.itag] =
-            sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+    //console.log("dla " + qty + " > " + hrf);
+    if(contains(chosen, qst.itag))
+    {
+        pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
+        f[qua['_' + qst.itag]] = hrf;
+//        qua['_' + qst.itag] =
+//                sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+        arr['_' + qst.itag]=sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+    }
     //
-    f[qua['_' + qst.itag]] = hrf;
     //
 }
 
