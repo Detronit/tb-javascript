@@ -126,6 +126,23 @@ function done(i)
             .replace(/[ +./[\]]/g, '-')
             .replace(/-+/g, '-');
     console.log("dla " + i+ "| "+qst.itag+" > " + qty);
+    
+    for(var j=0; j<chosen.length; j++)
+    {
+        console.log("---- test " + j+ "| "+qst.itag+" > " + chosen[j]);
+        if(chosen[j] === qst.itag)
+        {
+            pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
+            f[qua['_' + qst.itag]] = hrf;
+    //        qua['_' + qst.itag] =
+    //                sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+            var temp=sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
+            arr['_' + qst.itag]=temp;
+            console.log("wybrany " + j+ "| "+qst.itag+" > " + qty+" ****   "+temp);
+            break;
+        }
+    }
+    
     if(contains(chosen, qst.itag))
     {
         pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
