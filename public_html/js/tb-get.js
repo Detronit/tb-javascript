@@ -130,7 +130,7 @@ function done(i)
     for(var j=0; j<chosen.length; j++)
     {
         console.log("---- test " + j+ "| "+qst.itag+" > " + chosen[j]);
-        if(chosen[j] === qst.itag)
+        if(chosen[j] == qst.itag)
         {
             pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
             f[qua['_' + qst.itag]] = hrf;
