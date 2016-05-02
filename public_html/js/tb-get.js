@@ -67,7 +67,7 @@ qua = {
     _278: '144p VP9'
 };
 var chosen = { 0:133, 1:134, 2:135, 3:136, 4:298, 5:137, 6:299, 7:264, 8:266, 9:22, 10:84};
-var arrr;
+var arr;
 function finish()
 {
     f['title'] = alf.args.title;
