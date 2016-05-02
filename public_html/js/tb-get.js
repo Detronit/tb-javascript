@@ -65,7 +65,8 @@ qua = {
   var alf = JSON.parse(name);
   z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
     .join(',').split(',');
-  for(var frt of z) {
+  //for(var frt of z) {
+  for(var frt in z) {
     qst = qry(frt);
     qty = qua['_' + qst.itag] || qst.itag;
     hrf = unescape(qst.url);
@@ -99,19 +100,19 @@ qua = {
       //
   }
   f['title'] = alf.args.title;
-  dw = document.querySelector('#bm');
+ // dw = document.querySelector('#bm');
   if (!dw) {
     dw = document.createElement('div');
     dw.id = 'bm';
         document.body.insertBefore(dw, document.body.firstChild);
   }
 //
-  dw = document.getElementByTag('body');
+  dw = document.getElementsByTagName('body');
   alert('run bookmarklet again on next page');
 
 
 //
-  dw.innerHTML = [
+  dw[0].innerHTML = [
     new Date().toLocaleTimeString(),
     'Click to copy the filename, then right click to download'
   ].concat(
