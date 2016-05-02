@@ -53,11 +53,11 @@ qua = {
   _278: '144p VP9'
 };
 
-if (location.host == 'www.youtube.com') {
+//if (location.host == 'www.youtube.com') {
   name = JSON.stringify(ytplayer.config);
   alert('run bookmarklet again on next page');
-  location = '//s.ytimg.com';
-} else {
+ // location = '//s.ytimg.com';
+//} else {
   alf = JSON.parse(name);
   z = [alf.args.adaptive_fmts, alf.args.url_encoded_fmt_stream_map]
     .join(',').split(',');
@@ -93,7 +93,7 @@ if (location.host == 'www.youtube.com') {
     dw = document.createElement('div');
     dw.id = 'bm';
     document.body.insertBefore(dw, document.body.firstChild);
-  }
+  //}
   dw.innerHTML = [
     new Date().toLocaleTimeString(),
     'Click to copy the filename, then right click to download'
