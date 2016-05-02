@@ -90,12 +90,16 @@ alert('run bookmarklet again on next page');
 //    Object.keys(qua).map(ky => qua[ky]).filter(vu => /href/.test(vu))
 //  ).join('<br>');
 //
+
 document.body.innerHTML = [
     new Date().toLocaleTimeString(),
     'Click to copy the filename, then right click to download'
 ].concat( Object.keys(arr).map(ky => arr[ky]).filter(vu => /href/.test(vu))).join('<br>');
     var ele = document.createElement("p");
-        ele.innerHTML = JSON.stringify(f);
+for(var u in f)
+{
+    ele.innerHTML += u+" | "+f[u]+"<br>";
+}
         document.body.appendChild(ele);
 }
 
