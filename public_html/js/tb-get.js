@@ -90,7 +90,7 @@ qua = {
       .replace(/h.264/, 'h264')
       .replace(/[ +./[\]]/g, '-')
       .replace(/-+/g, '-');
-    console.log("dla "+qty+" > "+href);
+    console.log("dla "+qty+" > "+hrf);
     pm = sprintf('prompt("", "%s"); return false', fn).replace(/"/g, '&quot;');
     qua['_' + qst.itag] =
       sprintf('<a href="%s" onclick="%s">%s</a>', hrf, pm, qty);
