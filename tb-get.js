@@ -93,11 +93,11 @@ qua = {
     dw = document.createElement('div');
     dw.id = 'bm';
     document.body.insertBefore(dw, document.body.firstChild);
-  //}
+  }
   dw.innerHTML = [
     new Date().toLocaleTimeString(),
     'Click to copy the filename, then right click to download'
   ].concat(
     Object.keys(qua).map(ky => qua[ky]).filter(vu => /href/.test(vu))
   ).join('<br>');
-}
+
